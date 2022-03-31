@@ -22,7 +22,7 @@ function pokemon({pokeman}) {
 export default pokemon;
 
 export async function getServerSideProps({ query }){
-    const id = query.id;
+    const {id} = query;
     try {
         const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
         const pokeman = await res.json()
